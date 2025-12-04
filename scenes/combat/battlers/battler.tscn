@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://x35o1i6nqkpq"]
+
+[ext_resource type="Script" uid="uid://cn11fey64tfqw" path="res://scripts/combat/battler.gd" id="1_o257m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qufc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o257m"]
+
+[node name="Battler" type="Node2D"]
+script = ExtResource("1_o257m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="StateMachine" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="StateMachine"]
+
+[node name="Selecting" type="Node" parent="StateMachine"]
+
+[node name="Attack" type="Node" parent="StateMachine"]
+
+[node name="Defend" type="Node" parent="StateMachine"]
+
+[node name="Moving" type="Node" parent="StateMachine"]
+
+[node name="Damaged" type="Node" parent="StateMachine"]
+
+[node name="Dead" type="Node" parent="StateMachine"]
+
+[node name="Hitboxes" type="Node2D" parent="."]
+
+[node name="Hurtbox" type="Area2D" parent="Hitboxes"]
+
+[node name="HurtShape" type="CollisionShape2D" parent="Hitboxes/Hurtbox"]
+shape = SubResource("RectangleShape2D_7qufc")
+
+[node name="HitBox" type="Area2D" parent="Hitboxes"]
+
+[node name="HitShape" type="CollisionShape2D" parent="Hitboxes/HitBox"]
+shape = SubResource("RectangleShape2D_o257m")
