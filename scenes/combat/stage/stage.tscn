@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ch8wivx3waq5w"]
 
-[ext_resource type="PackedScene" uid="uid://codau2n4mgc86" path="res://scenes/combat/battlers/skull_enemy.tscn" id="1_j0eg0"]
+[ext_resource type="PackedScene" uid="uid://codau2n4mgc86" path="res://scenes/combat/battlers/battler_enemy_skull.tscn" id="1_j0eg0"]
 [ext_resource type="PackedScene" uid="uid://ddd0tlv1o2mat" path="res://scenes/combat/battlers/battler_player.tscn" id="1_l6hjl"]
 
 [node name="Stage" type="Node2D"]
