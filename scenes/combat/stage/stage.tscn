@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ch8wivx3waq5w"]
+[gd_scene load_steps=3 format=3 uid="uid://ch8wivx3waq5w"]
 
-[ext_resource type="PackedScene" uid="uid://ur1ikppy3y6e" path="res://scenes/combat/battlers/skull_enemy.tscn" id="1_j0eg0"]
+[ext_resource type="PackedScene" uid="uid://codau2n4mgc86" path="res://scenes/combat/battlers/skull_enemy.tscn" id="1_j0eg0"]
+[ext_resource type="PackedScene" uid="uid://ddd0tlv1o2mat" path="res://scenes/combat/battlers/battler_player.tscn" id="1_l6hjl"]
 
 [node name="Stage" type="Node2D"]
 
@@ -12,5 +13,8 @@ position = Vector2(0, 316)
 color = Color(1, 0.7019608, 0.7019608, 1)
 polygon = PackedVector2Array(0, 44, 0, -1, 639, -1, 639, 43)
 
+[node name="BattlerPlayer" parent="." instance=ExtResource("1_l6hjl")]
+position = Vector2(56, 299)
+
 [node name="SkullEnemy" parent="." instance=ExtResource("1_j0eg0")]
-position = Vector2(20, 293)
+position = Vector2(585, 293)
