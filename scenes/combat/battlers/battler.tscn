@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://cn11fey64tfqw" path="res://scripts/combat/battler.gd" id="1_o257m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7qufc"]
+size = Vector2(20, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o257m"]
+size = Vector2(20, 19)
 
 [node name="Battler" type="Node2D"]
 script = ExtResource("1_o257m")
@@ -34,9 +36,11 @@ script = ExtResource("1_o257m")
 [node name="Hurtbox" type="Area2D" parent="Hitboxes"]
 
 [node name="HurtShape" type="CollisionShape2D" parent="Hitboxes/Hurtbox"]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_7qufc")
 
 [node name="HitBox" type="Area2D" parent="Hitboxes"]
 
 [node name="HitShape" type="CollisionShape2D" parent="Hitboxes/HitBox"]
 shape = SubResource("RectangleShape2D_o257m")
+disabled = true

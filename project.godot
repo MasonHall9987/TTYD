@@ -16,8 +16,8 @@ config/icon="res://icon.svg"
 
 [debug]
 
-gdscript/stretch/mode="viewport"
-gdscript/size/viewport_height=360
+gdscript/stretch/mode="disabled"
+gdscript/size/viewport_height=648
 
 [display]
 

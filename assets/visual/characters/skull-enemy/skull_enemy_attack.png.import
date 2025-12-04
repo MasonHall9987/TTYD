@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx6y5k8ibqrye"
-path="res://.godot/imported/Skull Boy-Death.png-13f772e98721d546de37a03f97fbe94e.ctex"
+uid="uid://cwq8lac4jyei1"
+path="res://.godot/imported/skull_enemy_attack.png-b0eed21b4810faf93ae73706694e3e8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/characters/Skull Boy 99x46/Skull Boy-Death.png"
-dest_files=["res://.godot/imported/Skull Boy-Death.png-13f772e98721d546de37a03f97fbe94e.ctex"]
+source_file="res://assets/visual/characters/skull-enemy/skull_enemy_attack.png"
+dest_files=["res://.godot/imported/skull_enemy_attack.png-b0eed21b4810faf93ae73706694e3e8b.ctex"]
 
 [params]
 

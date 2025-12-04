@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1wou1pmu3u06"
-path="res://.godot/imported/Skull Boy-Idle.png-9f1af2134d52a1b7e9825a2ea399f293.ctex"
+uid="uid://bqr2qafuxqpxj"
+path="res://.godot/imported/skull_enemy_run.png-ddb72834cf23a6d754554668c1c5d91b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/characters/Skull Boy 99x46/Skull Boy-Idle.png"
-dest_files=["res://.godot/imported/Skull Boy-Idle.png-9f1af2134d52a1b7e9825a2ea399f293.ctex"]
+source_file="res://assets/visual/characters/skull-enemy/skull_enemy_run.png"
+dest_files=["res://.godot/imported/skull_enemy_run.png-ddb72834cf23a6d754554668c1c5d91b.ctex"]
 
 [params]
 

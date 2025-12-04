@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://ur1ikppy3y6e"]
+
+[ext_resource type="PackedScene" uid="uid://x35o1i6nqkpq" path="res://scenes/combat/battlers/battler.tscn" id="1_4xll4"]
+[ext_resource type="Texture2D" uid="uid://c7rckggc8j8ka" path="res://assets/visual/characters/skull-enemy/skull_boy.png" id="2_oy5wi"]
+
+[sub_resource type="Animation" id="Animation_oy5wi"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_swps6"]
+_data = {
+&"idle": SubResource("Animation_oy5wi")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oy5wi"]
+size = Vector2(20, 24)
+
+[node name="Battler" instance=ExtResource("1_4xll4")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_oy5wi")
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_swps6")
+}
+
+[node name="HurtShape" parent="Hitboxes/Hurtbox" index="0"]
+position = Vector2(-2, 4)
+shape = SubResource("RectangleShape2D_oy5wi")
+
+[node name="HitShape" parent="Hitboxes/HitBox" index="0"]
+visible = false
+position = Vector2(-2, -0.5)

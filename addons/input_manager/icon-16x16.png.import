@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpv6q1w6m6cla"
-path="res://.godot/imported/Skull Boy 99x46.png-be272b4bd9b8299fde14235911840568.ctex"
+uid="uid://ddfyi4ikgc50j"
+path="res://.godot/imported/icon-16x16.png-0f3f9dde474633da04ac4ccc000d08a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/characters/Skull Boy 99x46/Skull Boy 99x46.png"
-dest_files=["res://.godot/imported/Skull Boy 99x46.png-be272b4bd9b8299fde14235911840568.ctex"]
+source_file="res://addons/input_manager/icon-16x16.png"
+dest_files=["res://.godot/imported/icon-16x16.png-0f3f9dde474633da04ac4ccc000d08a1.ctex"]
 
 [params]
 

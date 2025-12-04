@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqr2qafuxqpxj"
-path="res://.godot/imported/Skull Boy-Run.png-2c6ec5ff34793b69c4cb834e7c3a7970.ctex"
+uid="uid://o0ggnykursvo"
+path="res://.godot/imported/skull_enemy_hit.png-24a6e69be8ebc6c3c3ee9a7e03b37d4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/characters/Skull Boy 99x46/Skull Boy-Run.png"
-dest_files=["res://.godot/imported/Skull Boy-Run.png-2c6ec5ff34793b69c4cb834e7c3a7970.ctex"]
+source_file="res://assets/visual/characters/skull-enemy/skull_enemy_hit.png"
+dest_files=["res://.godot/imported/skull_enemy_hit.png-24a6e69be8ebc6c3c3ee9a7e03b37d4a.ctex"]
 
 [params]
 
