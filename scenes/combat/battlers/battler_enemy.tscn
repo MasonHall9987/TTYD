@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0tm1ujkix708"]
-
-[ext_resource type="PackedScene" uid="uid://x35o1i6nqkpq" path="res://scenes/combat/battlers/battler.tscn" id="1_0csnk"]
-
-[node name="BattlerEnemy" instance=ExtResource("1_0csnk")]
-
-[node name="Sprite2D" parent="." index="0"]
-flip_h = true

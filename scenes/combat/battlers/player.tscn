@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddd0tlv1o2mat"]
+
+[ext_resource type="PackedScene" uid="uid://x35o1i6nqkpq" path="res://scenes/combat/battlers/battler.tscn" id="1_2hopn"]
+
+[node name="Player" instance=ExtResource("1_2hopn")]
