@@ -17,11 +17,9 @@ func _ready() -> void:
 func initialize() -> void:
 	# IMPORTANT: If this is a unique character (like the player) that upgrades stats,
 	# we want to ensure we aren't modifying the original file on disk for everyone.
-	# If this is a generic enemy, sharing the resource is fine.
 	if stats_resource:
 		# Copy stats to local variables
 		current_health = stats_resource.max_health
-		emit_signal("health_changed", current_health, stats_resource.max_health)
 
 # --- COMBAT LOGIC ---
 

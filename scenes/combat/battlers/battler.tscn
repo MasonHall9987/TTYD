@@ -1,12 +1,70 @@
-[gd_scene load_steps=5 format=3 uid="uid://x35o1i6nqkpq"]
+[gd_scene load_steps=10 format=3 uid="uid://x35o1i6nqkpq"]
 
-[ext_resource type="Script" uid="uid://cn11fey64tfqw" path="res://scripts/combat/battler.gd" id="1_o257m"]
+[ext_resource type="Script" uid="uid://cn11fey64tfqw" path="res://scripts/combat/battler/battler.gd" id="1_o257m"]
+[ext_resource type="Texture2D" uid="uid://uxcd0f8ng60o" path="res://assets/visual/characters/2D-Pixel-Art-Character-Template/Idle/player_idle.png" id="2_6ul23"]
+[ext_resource type="Resource" uid="uid://c4gehjotk1t4g" path="res://resources/combat/battler.tres" id="2_mwk58"]
+[ext_resource type="Script" uid="uid://dcr5fycgvkqtq" path="res://scripts/base_fsm.gd" id="2_yroi3"]
+[ext_resource type="Script" uid="uid://blj0qpfjdcneh" path="res://scripts/combat/battler/states/battler_state.gd" id="4_11srk"]
+
+[sub_resource type="Animation" id="Animation_11srk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="Animation_o257m"]
 resource_name = "idle"
+length = 0.3712
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668, 0.3, 0.33333334, 0.36666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yroi3"]
 _data = {
+&"RESET": SubResource("Animation_11srk"),
 &"idle": SubResource("Animation_o257m")
 }
 
@@ -15,29 +73,42 @@ size = Vector2(20.5, 24)
 
 [node name="Battler" type="Node2D"]
 script = ExtResource("1_o257m")
+stats_resource = ExtResource("2_mwk58")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6ul23")
+hframes = 10
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_yroi3")
 }
+autoplay = "idle"
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_yroi3")
+initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("4_11srk")
 
 [node name="Selecting" type="Node" parent="StateMachine"]
+script = ExtResource("4_11srk")
 
 [node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("4_11srk")
 
 [node name="Defend" type="Node" parent="StateMachine"]
+script = ExtResource("4_11srk")
 
 [node name="Moving" type="Node" parent="StateMachine"]
+script = ExtResource("4_11srk")
 
 [node name="Damaged" type="Node" parent="StateMachine"]
+script = ExtResource("4_11srk")
 
 [node name="Dead" type="Node" parent="StateMachine"]
+script = ExtResource("4_11srk")
 
 [node name="Hitboxes" type="Node2D" parent="."]
 
