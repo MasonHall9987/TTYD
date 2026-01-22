@@ -16,4 +16,4 @@ var battler: Battler
 func _ready() -> void:
 	await owner.ready
 	battler = owner as Battler
-	assert(battler != null)
+	assert(battler != null, "The BattlerState state type must be used only in the battler scene. It needs the owner to be a Battler node.")
