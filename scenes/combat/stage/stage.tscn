@@ -1,10 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://ch8wivx3waq5w"]
+[gd_scene load_steps=12 format=3 uid="uid://ch8wivx3waq5w"]
 
+[ext_resource type="Script" uid="uid://dbb6fuky58461" path="res://scripts/combat/stage/stage.gd" id="1_guyie"]
 [ext_resource type="PackedScene" uid="uid://dgp7151grh2hs" path="res://scenes/combat/battlers/enemy.tscn" id="1_l6hjl"]
 [ext_resource type="PackedScene" uid="uid://ddd0tlv1o2mat" path="res://scenes/combat/battlers/player.tscn" id="2_pu4yc"]
+[ext_resource type="PackedScene" uid="uid://b12b5hj5534k2" path="res://scenes/state_machine.tscn" id="3_guyie"]
 [ext_resource type="PackedScene" uid="uid://dxl4ccxcks7xd" path="res://scenes/combat/stage/spawner.tscn" id="3_pu4yc"]
+[ext_resource type="Script" uid="uid://b7f1lxvynibj" path="res://scripts/combat/stage/states/loading.gd" id="4_twhrp"]
+[ext_resource type="Script" uid="uid://cnm3v4oakuvu5" path="res://scripts/combat/stage/states/begin.gd" id="5_80x2g"]
+[ext_resource type="Script" uid="uid://cs80m4m8xvux1" path="res://scripts/combat/stage/states/combat.gd" id="6_80x2g"]
+[ext_resource type="Script" uid="uid://baifmnhsxm3as" path="res://scripts/combat/stage/states/end.gd" id="9_rlqvb"]
+[ext_resource type="Script" uid="uid://cj46bxgmquscq" path="res://scripts/combat/stage/states/clean_up.gd" id="10_rlqvb"]
+[ext_resource type="PackedScene" uid="uid://dhcpl46y7syx7" path="res://scenes/sate-label.tscn" id="11_2161r"]
 
 [node name="Stage" type="Node2D"]
+script = ExtResource("1_guyie")
+player_scene = ExtResource("2_pu4yc")
+enemy_scene = ExtResource("1_l6hjl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -14,10 +25,34 @@ position = Vector2(0, 316)
 color = Color(1, 0.7019608, 0.7019608, 1)
 polygon = PackedVector2Array(0, 44, 0, -1, 639, -1, 639, 43)
 
-[node name="Player_Spawner" parent="." instance=ExtResource("3_pu4yc")]
+[node name="PlayerSpawner" parent="." instance=ExtResource("3_pu4yc")]
 position = Vector2(73, 299)
-battler_scene = ExtResource("2_pu4yc")
 
-[node name="Enemy_Spawner" parent="." instance=ExtResource("3_pu4yc")]
+[node name="EnemySpawner" parent="." instance=ExtResource("3_pu4yc")]
 position = Vector2(567, 299)
-battler_scene = ExtResource("1_l6hjl")
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("3_guyie")]
+initial_state = NodePath("Loading")
+
+[node name="Loading" type="Node" parent="StateMachine"]
+script = ExtResource("4_twhrp")
+
+[node name="Begin" type="Node" parent="StateMachine"]
+script = ExtResource("5_80x2g")
+
+[node name="Combat" type="Node" parent="StateMachine"]
+script = ExtResource("6_80x2g")
+
+[node name="End" type="Node" parent="StateMachine"]
+script = ExtResource("9_rlqvb")
+
+[node name="CleanUp" type="Node" parent="StateMachine"]
+script = ExtResource("10_rlqvb")
+
+[node name="SateLabel" parent="." instance=ExtResource("11_2161r")]
+offset_left = 311.0
+offset_top = 23.0
+offset_right = 351.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 28
+metadata/_edit_use_anchors_ = true
