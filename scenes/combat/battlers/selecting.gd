@@ -5,7 +5,7 @@ extends BattlerState
 func _ready() -> void:
 	pass # Replace with function body.
 
-
+@warning_ignore("unused_parameter")
 func enter(previous_state_path: String, data := {}) -> void:
 	await delay(1.0)
 	finished.emit(ATTACKING, {})

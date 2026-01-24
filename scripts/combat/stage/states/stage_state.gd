@@ -20,6 +20,10 @@ var turn_order: Array[Battler]:
 	get: return stage.turn_order
 	set(value): stage.turn_order = value
 
+var battlers: Array[Battler]:
+	get: return stage.battlers
+	set(value): stage.battlers = value
+
 var player_battler: Battler:
 	get: return stage.player_battler
 	set(value): stage.player_battler = value

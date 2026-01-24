@@ -4,11 +4,15 @@ extends Node2D
 # Signals to update UI
 signal health_changed(current: int, max: int)
 signal died()
+@warning_ignore("unused_signal")
+signal finished_attacking()
 
 # The Resource File (.tres) goes here
 @export var stats_resource: BattlerStats
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+@onready var state_machine: StateMachine = $StateMachine
 
 # Runtime variables (These change during combat)
 var current_health: int

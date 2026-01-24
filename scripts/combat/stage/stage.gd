@@ -11,9 +11,9 @@ extends Node2D
 var player_battler: Battler
 var enemy_battler: Battler
 
-var turn_order: Array[Battler]:
-	get: return turn_order
-	set(value): turn_order = value
+var turn_order: Array[Battler]
+
+var battlers: Array[Battler]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
