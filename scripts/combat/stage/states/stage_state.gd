@@ -15,6 +15,14 @@ var stage: Node2D
 var player_spawner: Node2D
 var enemy_spawner: Node2D
 
+var player_battler: Battler:
+	get: return stage.player_battler
+	set(value): stage.player_battler = value
+
+var enemy_battler: Battler:
+	get: return stage.enemy_battler
+	set(value): stage.enemy_battler = value
+
 
 func _ready() -> void:
 	await owner.ready

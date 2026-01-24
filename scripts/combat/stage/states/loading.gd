@@ -6,6 +6,5 @@ func enter(previous_state_path: String, data := {}) -> void:
 	finished.emit(BEGIN, {})
 
 func spawn_battlers() -> void:
-	assert(player_spawner != null, "Player Spawner Does not exist")
-	player_spawner.spawn_battler(player_scene)
-	enemy_spawner.spawn_battler(enemy_scene)
+	player_battler = player_spawner.spawn_battler(player_scene) as Battler
+	enemy_battler = enemy_spawner.spawn_battler(enemy_scene) as Battler
