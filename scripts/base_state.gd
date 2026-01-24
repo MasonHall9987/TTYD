@@ -28,3 +28,5 @@ func enter(previous_state_path: String, data := {}) -> void:
 ## to clean up the state.
 func exit() -> void:
 	pass
+
+

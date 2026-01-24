@@ -8,6 +8,8 @@ signal died()
 # The Resource File (.tres) goes here
 @export var stats_resource: BattlerStats
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 # Runtime variables (These change during combat)
 var current_health: int
 
