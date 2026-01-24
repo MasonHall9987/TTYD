@@ -29,4 +29,11 @@ func enter(previous_state_path: String, data := {}) -> void:
 func exit() -> void:
 	pass
 
-
+func delay(duration: float) -> void:
+	var timer: Timer = Timer.new()
+	timer.wait_time = duration
+	timer.one_shot = true
+	add_child(timer)
+	timer.start()
+	await timer.timeout
+	timer.queue_free()

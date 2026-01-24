@@ -6,10 +6,14 @@ extends Node2D
 
 @export var player_scene: PackedScene
 @export var enemy_scene: PackedScene
+@export var player_starts_first: bool = true
 
 var player_battler: Battler
 var enemy_battler: Battler
 
+var turn_order: Array[Battler]:
+	get: return turn_order
+	set(value): turn_order = value
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

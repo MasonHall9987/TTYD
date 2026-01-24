@@ -14,6 +14,11 @@ var enemy_scene: PackedScene
 var stage: Node2D
 var player_spawner: Node2D
 var enemy_spawner: Node2D
+var player_starts_first: bool
+
+var turn_order: Array[Battler]:
+	get: return stage.turn_order
+	set(value): stage.turn_order = value
 
 var player_battler: Battler:
 	get: return stage.player_battler
@@ -31,3 +36,4 @@ func _ready() -> void:
 	enemy_spawner = stage.enemy_spawner
 	player_scene = stage.player_scene
 	enemy_scene = stage.enemy_scene
+	player_starts_first = stage.player_starts_first
