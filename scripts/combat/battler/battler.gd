@@ -62,3 +62,9 @@ func get_effective_stat(stat_name: String) -> int:
 	
 			
 	return base_val
+
+# --- Animation ---
+
+func play_animation(animation_name: String) -> void:
+	animation_player.play(animation_name)
+	await animation_player.animation_finished
